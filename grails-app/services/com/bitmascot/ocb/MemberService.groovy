@@ -2,9 +2,9 @@ package com.bitmascot.ocb
 
 import grails.web.servlet.mvc.GrailsParameterMap
 
-/*import grails.gorm.transactions.Transactional
+import grails.gorm.transactions.Transactional
 
-@Transactional*/
+@Transactional
 class MemberService {
 
 //save method

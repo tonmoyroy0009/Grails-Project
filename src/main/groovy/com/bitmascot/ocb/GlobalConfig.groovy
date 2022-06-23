@@ -5,4 +5,8 @@ class GlobalConfig {
             ADMINISTRATOR: "ADMINISTRATOR",
             REGULAR_MEMBER: "REGULAR_MEMBER",
     ]
+
+    static Integer itemsPerPage() {
+        return 5
+    }
 }

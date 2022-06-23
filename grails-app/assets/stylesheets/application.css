@@ -9,5 +9,6 @@
 *
 *= require bootstrap
 *= require style
+*= require front-awesome/css/all.css
 *= require_self
 */
