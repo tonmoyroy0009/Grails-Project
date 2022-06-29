@@ -5,7 +5,7 @@ import org.grails.web.util.WebUtils
 class AppUtil {
 
 /*
-    //when I through some message from 1 controller, this will work//
+    //when I throw some message from 1 controller, this will work//
 */
 
     static saveResponse(Boolean isSuccess, def model) {

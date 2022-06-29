@@ -11,7 +11,7 @@ class UserService {
 
     def save(GrailsParameterMap params) {
         User user = new User(params)
-//        user.username = params.email
+//        user.email = params.username
         def response = AppUtil.saveResponse(false, user)
         if (user.validate()) {
             user.save(flush: true)

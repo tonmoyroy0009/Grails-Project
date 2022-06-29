@@ -25,6 +25,9 @@
 
 <body>
 %{--Header navbar--}%
+%{--<g:if test='${flash.message= "Successfully Login"}'>
+    <div class="alert alert-success" role="alert" >${flash.message}</div>
+</g:if>--}%
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded">
         <a class="navbar-brand" href="#">Grails Online Contacts Book</a>

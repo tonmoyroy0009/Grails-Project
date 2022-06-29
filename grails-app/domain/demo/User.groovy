@@ -13,15 +13,18 @@ class User implements Serializable {
 
     String username
     String password
-//    String email
-    Boolean isActive = true
+    String email
+
     boolean enabled = true
+
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
 
-    Date dateCreated
-    Date lastUpdated
+    Boolean isActive = true
+
+    /* Date dateCreated
+     Date lastUpdated*/
 
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
@@ -30,7 +33,7 @@ class User implements Serializable {
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
-        /*email(email: true, nullable: false, unique: true, blank: false)*/
+        email(email: true, nullable: false, unique: true, blank: false)
     }
 
     static mapping = {

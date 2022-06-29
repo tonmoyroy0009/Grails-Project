@@ -22,14 +22,14 @@ class UserRole implements Serializable {
 		}
 	}
 
-    @Override
+	@Override
 	int hashCode() {
-	    int hashCode = HashCodeHelper.initHash()
-        if (user) {
-            hashCode = HashCodeHelper.updateHash(hashCode, user.id)
+		int hashCode = HashCodeHelper.initHash()
+		if (user) {
+			hashCode = HashCodeHelper.updateHash(hashCode, user.id)
 		}
 		if (role) {
-		    hashCode = HashCodeHelper.updateHash(hashCode, role.id)
+			hashCode = HashCodeHelper.updateHash(hashCode, role.id)
 		}
 		hashCode
 	}
@@ -45,7 +45,7 @@ class UserRole implements Serializable {
 	private static DetachedCriteria criteriaFor(long userId, long roleId) {
 		UserRole.where {
 			user == User.load(userId) &&
-			role == Role.load(roleId)
+					role == Role.load(roleId)
 		}
 	}
 
@@ -70,11 +70,11 @@ class UserRole implements Serializable {
 	}
 
 	static constraints = {
-	    user nullable: false
+		user nullable: false
 		role nullable: false, validator: { Role r, UserRole ur ->
 			if (ur.user?.id) {
 				if (UserRole.exists(ur.user.id, r.id)) {
-				    return ['userRole.exists']
+					return ['userRole.exists']
 				}
 			}
 		}
